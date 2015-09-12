@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LeaveManagement</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar" style="background:#9b0000">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img src="http://mis.neosofttech.in//images/logo.jpg" height ="51px">
+        </div>
+
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="<%= home_path %>">Home</a> </li>
+            <!-- <li>
+              <%#= link_to user_notification_url("Notification",Status.pending_leaves.count),
+              notification_path %>
+            </li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "edit profile",edit_user_registration_path %> </li>
+            <li><%= link_to 'Logout', destroy_user_session_path, class: "" , method: :delete %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="col-md-2 well">
+      <h3> Welcome <%= current_user.name %> </h3>
+      <ul>
+        <li>
+         <%= link_to 'View Leaves Request', statues_index_path, class: ""  %>
+       </li>
+     </ul>
+    </div>
+
+    <div class="col-md-8">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

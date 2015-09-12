@@ -1,0 +1,6 @@
+nav li a {color:white;}
+.Approved {background: #CBDED8  }
+.Rejected {background: #EFB4BD }
+.Pending {background: #EAE4AF}
+.statusApproved {color: green;}
+.statusRejected {color:red;}

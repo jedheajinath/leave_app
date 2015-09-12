@@ -1,0 +1,30 @@
+<div class="leaves well">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+      <th>Employee Name</th>
+        <th>From Date</th>
+        <th> To Date</th>
+        <th> Days</th>
+        <th> Status </th>
+        <th> View More </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @leaves.each do |leave| %>
+      <tr>
+
+        <td><%= leave.user.name %></td>
+        <td> <%= leave.from_date %> </td>
+        <td><%= leave.to_date %> </td>
+        <td> <%= leave.get_leaves_day %> </td>
+        <td class = "text-danger" >
+          <%= leave.status.status if leave.status.present? %>
+        </td>
+        <td><%= link_to 'View More', leafe_path(leave) %></td>
+
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

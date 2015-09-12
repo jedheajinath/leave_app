@@ -1,0 +1,28 @@
+<%= form_for(@leave) do |f| %>
+
+  <% if @leave.errors.present? %>
+    <p class="text-danger"> <%= @leave.errors.full_messages.first  %></p>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :from_date %> <br>
+    <%= f.text_field :from_date, id: "from", readonly: "readonly"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :to_date %> <br>
+    <%= f.text_field :to_date, id: "to", readonly: "readonly"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :reason %> <br>
+    <%= f.text_area :reason,cols: 40, rows: 4 %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="action">
+    <%= f.submit class: "btn-sm btn-primary" %>
+  </div>
+<% end %>
+
+
