@@ -1,7 +1,10 @@
 class Leave < ActiveRecord::Base
   belongs_to :user
   has_one :status, dependent: :destroy
-  validates :from_date, :to_date, :reason,  presence: true
+
+  # validates :from_date, :to_date, :reason,  presence: true
+  validate :from_date_cannot_be_in_the_past
+  validate :to_date_cannot_be_less_than_from_date
 
   def get_leaves_day
     sunday, saturday = 0, 6
@@ -10,13 +13,17 @@ class Leave < ActiveRecord::Base
     return count
   end
 
-  # def to_date=(str)
-  #   to_date = Date.strptime(str, "%m/%d/%Y").strftime('%Y/%m/%d')
-  #   logger.info "--------------#{to_date}"
-  # end
+  private
+    def from_date_cannot_be_in_the_past
+      if from_date < Date.today + 1
+        errors.add(:from_date, "Can't in  Past or Todays Date")
+      end
+    end
 
-  # def from_date=(str)
-  #   form_date = Date.strptime(str, "%m/%d/%Y").strftime('%Y/%m/%d')
-  #   logger.info "------------- #{form_date}"
-  # end
+    def to_date_cannot_be_less_than_from_date
+      if to_date <= from_date || (to_date - from_date).to_i > 30
+        errors.add(:to_date, "Must Greater than From date or
+         Leave cant more than 30 days")
+      end
+    end
 end

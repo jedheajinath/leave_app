@@ -54,9 +54,9 @@ class StatuesController < ApplicationController
   end
 
   private
-    def set_status
-      @status = Status.find_by_id(params[:id])
-    end
+    # def set_status
+    #   @status = Status.find_by_id(params[:id])
+    # end
 
     def status_param
       params.require(:status).permit(:reason, :user_id)
