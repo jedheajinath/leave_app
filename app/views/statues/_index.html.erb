@@ -7,10 +7,8 @@
         <th> To Date</th>
         <th> Days </th>
         <th> Status </th>
-        <% if can? :update, :delete, @leaves %>
-          <th> Provide Reason </th>
-        <% end %>
-        <th colspan="4"> View More </th>
+        <th> View More </th>
+        <th colspan="4"> Provide Reason </th>
       </tr>
     </thead>
     <tbody>
@@ -22,23 +20,17 @@
         <td> <%= leave.get_leaves_day %> Days</td>
         <td> <%= leave.status.status if leave.status.present?  %> </td>
         <td> <%= link_to 'View More', leafe_path(leave) %> </td>
-
-        <% if can? :update, :delete, leave %>
-          <td>
-            <%= link_to edit_url, edit_statue_path(leave.status) %>
-          </td>
-          <td> <%= link_to 'Approved', approve_statue_path(leave.status), method: :put,
-            remote: :true %>
-          </td>
-          <td> <%= link_to 'Rejected', reject_statue_path(leave.status), method: :put,
-            remote: :true %>
-          </td>
-
-          <td>
-            <%= link_to delete_url,leave, remote: true,
-            method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        <% end %>
+        <td><%= link_to edit_url, edit_statue_path(leave.status) %></td>
+        <td> <%= link_to 'Approved', approve_statue_path(leave.status), method: :put,
+          remote: :true %>
+        </td>
+        <td> <%= link_to 'Rejected', reject_statue_path(leave.status), method: :put,
+          remote: :true %>
+        </td>
+        <td>
+          <%= link_to delete_url,leave, remote: true,
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
       <% end %>
     </tbody>

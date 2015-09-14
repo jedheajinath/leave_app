@@ -17,8 +17,7 @@ class SiteController < ApplicationController
   end
 
   def admin_home
-    if current_user.role == 'Manager'
-    else
+    if !current_user.role == 'Manager'
       render text: "You are authoriserd user to access this page .."
     end
   end
