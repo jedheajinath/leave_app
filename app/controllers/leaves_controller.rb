@@ -1,6 +1,7 @@
 class LeavesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_leave, only: [:destroy]
+
   def index
     @leaves = current_user.leaves.order("created_at desc")
   end

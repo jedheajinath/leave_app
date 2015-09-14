@@ -1,6 +1,4 @@
 class StatuesController < ApplicationController
-  # before_action :set_status, only: [:update]
-
   before_action :authenticate_user!
   authorize_resource class: :StatuesController
 
@@ -20,9 +18,9 @@ class StatuesController < ApplicationController
   end
 
   def destroy
-     respond_to do |format|
-        format.js { }
-      end
+    respond_to do |format|
+      format.js { }
+    end
   end
 
   def update
@@ -56,11 +54,11 @@ class StatuesController < ApplicationController
   end
 
   private
-  def set_status
-    @status = Status.find_by_id(params[:id])
-  end
+    def set_status
+      @status = Status.find_by_id(params[:id])
+    end
 
-  def status_param
-    params.require(:status).permit(:reason, :user_id)
-  end
+    def status_param
+      params.require(:status).permit(:reason, :user_id)
+    end
 end

@@ -1,5 +1,6 @@
 class SiteController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
+  authorize_resource only: :admin_home, class: :SiteController
 
   def index
     if user_signed_in?
@@ -9,16 +10,9 @@ class SiteController < ApplicationController
   end
 
   def home
-    if current_user.role == 'Employee'
-      @leave = Leave.new
-    else
-      redirect_to admin_home_path
-    end
+    @leave = Leave.new
   end
 
   def admin_home
-    if !current_user.role == 'Manager'
-      render text: "You are authoriserd user to access this page .."
-    end
   end
 end

@@ -15,6 +15,7 @@ class Ability
       can :manage, :all
     else
       cannot :status
+      cannot [:admin_home], SiteController
     end
 
     #
