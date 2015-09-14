@@ -1,0 +1,4 @@
+<h4> You are not authorise to access this page.. </h4>
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+<% end %>
