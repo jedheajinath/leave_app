@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   get 'statues/index'
 
   get "/home" => "site#home"
+  get "/error" => "site#error"
   get  "/admin_home" => "site#admin_home"
   get "/notification" => "statues#notification"
-  # get "/update" => "statues#update"
+
   root 'site#index'
 
   resources :leaves

@@ -12,9 +12,9 @@ class Ability
     # end
 
     if user.role == "Manager"
-        can :manage, :all
+      can :manage, :all
     else
-        can :read, :all
+      cannot :status
     end
 
     #

@@ -1,13 +1,16 @@
 class StatuesController < ApplicationController
   # before_action :set_status, only: [:update]
 
+  before_action :authenticate_user!
+  authorize_resource class: :StatuesController
+
   def index
     @leaves = Leave.all.order("created_at desc")
   end
 
-  def notification
-    @leaves = Status.get_pending_leaves
-  end
+  # def notification
+  #   @leaves = Status.get_pending_leaves
+  # end
 
   def show
   end
