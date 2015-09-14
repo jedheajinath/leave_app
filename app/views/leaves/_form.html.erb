@@ -1,7 +1,7 @@
 <%= form_for(@leave) do |f| %>
 
   <% if @leave.errors.present? %>
-    <p class="alert alert-info"> <%= @leave.errors.full_messages.first  %></p>
+    <p class="alert alert-info" id ="flash"> <%= @leave.errors.full_messages.first  %></p>
   <% end %>
 
   <div class="field">

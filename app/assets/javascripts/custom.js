@@ -17,7 +17,6 @@ $(document).ready(function(){
       dateFormat: 'dd/mm/yy',
       changeMonth: true,
       numberOfMonths: 1,
-      maxDate: '+1m',
       beforeShowDay: $.datepicker.noWeekends,
       onClose: function( selectedDate ) {
         $( "#from" ).datepicker( "option", "maxDate", selectedDate );

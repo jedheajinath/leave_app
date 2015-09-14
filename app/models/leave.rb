@@ -20,18 +20,18 @@ class Leave < ActiveRecord::Base
         errors.add(:from_date, "Can't in  Past or Todays Date") if
         from_date < Date.today + 1
       elsif valid_date?(from_date)
-        self.errors.clear
         errors.add(:from_date, "Date must in following Format dd/mm/yyyy")
       end
     end
 
     def to_date_cannot_be_less_than_from_date
-      if valid_date?(to_date) || valid_date?(from_date)
-        errors.add(:to_date, "Date must in following Format dd/mm/yyyy")
-      elsif !to_date.nil?
+      if !to_date.nil?
+        self.errors.clear
         errors.add(:to_date, "Must Greater than From date or
         Leave cant more than 30 days") if
         to_date <= from_date || (to_date - from_date).to_i > 30
+      elsif valid_date?(to_date)
+        errors.add(:to_date, "Date must in following Format dd/mm/yyyy")
       end
     end
 
@@ -43,7 +43,6 @@ class Leave < ActiveRecord::Base
         return true
       end
     end
-
 end
 
 
