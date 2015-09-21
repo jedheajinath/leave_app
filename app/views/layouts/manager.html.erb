@@ -29,13 +29,19 @@
       </div>
     </nav>
 
-    <div class="col-md-2 well">
+    <div class="col-md-3 well">
       <h3> Welcome <%= current_user.name %> </h3>
       <ul>
         <li>
-         <%= link_to 'View Leaves Request', statues_index_path, class: ""  %>
-       </li>
-     </ul>
+          <%= link_to 'View Leaves Request', statues_index_path, class: ""  %>
+        </li>
+        <li>
+          <%= link_to 'Attendence', attendences_path %>
+        </li>
+        <li>
+          <%= link_to 'View Datewise Attendence', daywise_attendence_attendences_path %>
+        </li>
+      </ul>
     </div>
 
     <div class="col-md-8">

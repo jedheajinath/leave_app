@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
 
+  before_filter :get_domain
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "Access denied!"
     redirect_to error_path
@@ -17,6 +19,13 @@ class ApplicationController < ActionController::Base
         'manager'
       else
         'application'
+      end
+    end
+
+    def get_domain
+      #binding.pry
+      if request.subdomain != Rails.env
+        redirect_to root_url(host: request.host, subdomain: Rails.env)
       end
     end
 end

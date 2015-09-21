@@ -1,0 +1,43 @@
+<div class="attendence well">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Email</th>
+        <th> Status </th>
+        <th>Present</th>
+        <th>Absent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @users.empty? %>
+       <td colspan = "5" class = "text-primary">  NO RECORD FOUND </td>
+      <% else %>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <% if user.get_attendence.present? %>
+          <% if user.get_attendence.first.attendence %>
+            <td class = "present"> Present </td>
+          <% else %>
+             <td class = "absent"> Absent </td>
+          <% end %>
+        <% else %>
+          <td class = "absent"> Absent </td>
+        <% end %>
+        </td>
+        <td>
+          <%= link_to 'Present', present_attendence_path(user), method: :post,
+          remote: :true %>
+        </td>
+        <td>
+          <%= link_to 'Absent', absent_attendence_path(user), method: :post,
+          remote: :true %>
+        </td>
+      </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

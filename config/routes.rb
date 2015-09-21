@@ -3,17 +3,33 @@ Rails.application.routes.draw do
   get 'statues/index'
   get "/home" => "site#home"
   get "/error" => "site#error"
-  get  "/admin_home" => "site#admin_home"
+  get "/admin_home" => "site#admin_home"
+  get "/search_daywise_attendence/:date" => "attendences#search_daywise_attendence"
   # get "/notification" => "statues#notification"
+  # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
+  resources :users, only: [:monthly_attendence] do
+   get :monthly_attendence, on: :collection
+  end
 
   root 'site#index'
   resources :leaves
+  resources :attendences do
+    post :present, on: :member
+    post :absent, on: :member
+    get :daywise_attendence, on: :collection
+  end
   resources :statues do
     put :approve, on: :member
     put :reject, on: :member
   end
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations',
+    omniauth_callbacks: "omniauth_callbacks" }
+
+  match '', to: 'site#index', constraints: { subdomain: 'neosoft'}, via: [:get]
+
+  #root :to => 'site#index', :constraints => { subdomain: 'neosoft', domain: 'localhost'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,16 @@
+<table border="1" >
+<%= month_calendar do |date| %>
+  <% if current_user.get_monthly_attendence(date).include?(date) %>
+    <%= date %>
+    <div class= "present">
+      <b> Present </b>
+    </div>
+  <% else %>
+    <%= date %>
+    <div class = "absent">
+      <b> Absent </b>
+    </div>
+  <% end %>
+<% end %>
+</table>
+

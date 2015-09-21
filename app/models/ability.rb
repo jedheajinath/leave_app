@@ -14,7 +14,7 @@ class Ability
     if user.role == "Manager"
       can :manage, :all
     else
-      cannot :status
+      cannot :status, :attedences
       cannot [:admin_home], SiteController
     end
 

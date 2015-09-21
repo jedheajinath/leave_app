@@ -4,3 +4,10 @@ nav li a {color:white;}
 .Pending {background: #EAE4AF}
 .statusApproved {color: green;}
 .statusRejected {color:red;}
+.absent {color:red;}
+.present {color:green;}
+.simple-calendar a {padding: 10px; font-size: 14px; font-weight: bold; height:50px;  }
+.day {padding:10px; font-size: 10px; height: 80px;}
+.present {color:blue; font-size: 12px; font-weight: bold}
+.absent {color:red;}
+.form-control{width:300px;}

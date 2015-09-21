@@ -27,12 +27,16 @@
 
     <div class="col-md-3 well">
       <h3> Welcome <%= current_user.name %> </h3>
+      <%#= image_tag auth.info.image %>
       <ul>
         <li>
           <%= link_to 'Request for Leave', new_leafe_path %>
         </li>
         <li>
           <%= link_to 'View Leave Application', leaves_path %>
+        </li>
+        <li>
+          <%= link_to 'View Monthly Attendence', monthly_attendence_users_path %>
         </li>
       </ul>
     </div>

@@ -1,4 +1,5 @@
 class Leave < ActiveRecord::Base
+  # establish_connection "staging"
   belongs_to :user
   has_one :status, dependent: :destroy
 

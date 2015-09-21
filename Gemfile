@@ -5,7 +5,7 @@ gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem "pg"
-#gem 'mysql2', '~> 0.3.18'
+# gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,6 +26,15 @@ gem 'turbolinks'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem "font-awesome-rails"
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"
+gem "pry"
+gem "simple_calendar", "~> 2.0"
+# gem 'activerecord-postgres-hstore', git: 'git://github.com/softa/activerecord-postgres-hstore.git'
+
+#gem 'omniauth-digitalocean'
 # gem 'jquery_datepicker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
