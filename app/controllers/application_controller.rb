@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
 
-  before_filter :get_domain
+  # before_filter :get_domain
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "Access denied!"
