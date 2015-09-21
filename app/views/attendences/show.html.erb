@@ -1,2 +1,6 @@
+<h3 class= "text-primary text-center"> Datewise Attendence -
+     <%= Date.strptime(params[:date],'%m/%d/%Y').to_formatted_s(:rfc822)  if params[:date].present? %>
+</h3>
 <%= render 'index' %>
 <%= link_to "Back", :back %>
+

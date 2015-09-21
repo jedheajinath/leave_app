@@ -25,7 +25,13 @@ $(document).ready(function(){
   });
   $(function() {
     $( "#datepicker" ).datepicker({
-      dateFormat: 'dd/mm/yy'
+      // dateFormat: 'dd/mm/yy'
     });
   });
+  $("#flashmsg").click(function(){
+    $("#flash").remove();
+  });
+  $(".presents").parent().css( "background-color", "#D8F6CE" );
+  $(".future .absents").html("");
+  $(".prev-month .absents").html("")
 })

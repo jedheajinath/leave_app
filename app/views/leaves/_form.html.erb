@@ -1,27 +1,31 @@
-<%= form_for(@leave) do |f| %>
 
+<%= form_for(@leave) do |f| %>
   <% if @leave.errors.present? %>
-    <p class="alert alert-info" id ="flash"> <%= @leave.errors.full_messages.first  %></p>
+    <p class="alert alert-info" id ="flash">
+      <button aria-hidden="true" class="close" data-dismiss="alert" type="button"
+       id = "flashmsg">×</button>
+      <%= @leave.errors.full_messages.first  %>
+    </p>
   <% end %>
 
   <div class="field">
     <%= f.label :from_date %> <br>
-    <%= f.text_field :from_date, id: "from" %>
+    <%= f.text_field :from_date, id: "from", class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :to_date %> <br>
-    <%= f.text_field :to_date, id: "to" %>
+    <%= f.text_field :to_date, id: "to", class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :reason %> <br>
-    <%= f.text_area :reason,cols: 40, rows: 4 %>
+    <%= f.text_area :reason,cols: 40, rows: 4, class: "form-control" %>
     <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
-
+  <br>
   <div class="action">
-    <%= f.submit class: "btn-sm btn-primary" %>
+    <%= f.submit class: "btn-sm btn-primary"  %>
   </div>
 <% end %>
 

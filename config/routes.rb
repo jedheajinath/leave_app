@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   resources :users, only: [:monthly_attendence] do
-   get :monthly_attendence, on: :collection
+    get :monthly_attendence, on: :member
   end
 
   root 'site#index'

@@ -1,4 +1,4 @@
-<div class="attendence well">
+<div class="attendence">
   <table class="table table-bordered ">
     <thead>
       <tr>
@@ -7,11 +7,14 @@
         <th> Status </th>
         <th>Present</th>
         <th>Absent</th>
+        <th>View Attendence</th>
       </tr>
     </thead>
     <tbody>
-      <% if @users.empty? %>
-       <td colspan = "5" class = "text-primary">  NO RECORD FOUND </td>
+      <% if @users.nil? %>
+        <td colspan = "6" class = "text-primary">  NO RECORD FOUND </td>
+      <% elsif @users.empty? %>
+        <td colspan = "6" class = "text-primary">  NO RECORD FOUND </td>
       <% else %>
       <% @users.each do |user| %>
       <tr>
@@ -34,6 +37,9 @@
         <td>
           <%= link_to 'Absent', absent_attendence_path(user), method: :post,
           remote: :true %>
+        </td>
+        <td>
+          <%= link_to 'View Attendence', monthly_attendence_user_path(user) %>
         </td>
       </tr>
       <% end %>

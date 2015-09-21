@@ -29,22 +29,18 @@
       </div>
     </nav>
 
-    <div class="col-md-3 well">
-      <h3> Welcome <%= current_user.name %> </h3>
-      <ul>
-        <li>
-          <%= link_to 'View Leaves Request', statues_index_path, class: ""  %>
-        </li>
-        <li>
-          <%= link_to 'Attendence', attendences_path %>
-        </li>
-        <li>
-          <%= link_to 'View Datewise Attendence', daywise_attendence_attendences_path %>
-        </li>
+
+
+    <div class="col-sm-2 col-md-3">
+      <ul class="nav">
+        <li class="user admin"><h4> Welcome <%= current_user.name %> </h4></li>
+        <li><%= link_to 'View Leaves Request', statues_index_path, class: ""  %></li>
+        <li> <%= link_to 'Attendence', attendences_path %></li>
+        <li><%= link_to 'View Datewise Attendence', daywise_attendence_attendences_path %></li>
       </ul>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-9">
       <%= yield %>
     </div>
 

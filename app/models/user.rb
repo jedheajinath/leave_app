@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-          :omniauthable, omniauth_providers: [:facebook, :twitter, :google_oauth2]
+          :omniauthable, omniauth_providers: [:facebook, :twitter, :google]
 
   has_many :leaves, dependent: :destroy, class_name: :Leave
   has_many :attendences, dependent: :destroy
@@ -51,9 +51,9 @@ class User < ActiveRecord::Base
     user
   end
 
-  def get_monthly_attendence(date)
-    self.attendences.where(attendence_date:
-      date.beginning_of_month..date.end_of_month).pluck(:attendence_date)
+  def get_monthly_attendence(date = Date.today )
+    Hash[self.attendences.where(attendence_date:
+      date.beginning_of_month..date.end_of_month).pluck(:attendence_date, :attendence)]
   end
 
 end

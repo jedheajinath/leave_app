@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <nav class="navbar" style="background:#9b0000">
+    <nav class="navbar bg-primary">
       <div class="container-fluid">
         <div class="navbar-header">
           <img src="http://mis.neosofttech.in//images/logo.jpg" height ="51px">
@@ -25,23 +25,16 @@
       </div>
     </nav>
 
-    <div class="col-md-3 well">
-      <h3> Welcome <%= current_user.name %> </h3>
-      <%#= image_tag auth.info.image %>
-      <ul>
-        <li>
-          <%= link_to 'Request for Leave', new_leafe_path %>
-        </li>
-        <li>
-          <%= link_to 'View Leave Application', leaves_path %>
-        </li>
-        <li>
-          <%= link_to 'View Monthly Attendence', monthly_attendence_users_path %>
-        </li>
+    <div class="col-sm-2 col-md-3">
+      <ul class="nav">
+        <li class="user bg-primary"><h4> Welcome <%= current_user.name %> </h4></li>
+        <li><%= link_to 'Request for Leave', new_leafe_path %></li>
+        <li><%= link_to 'View Leave Application', leaves_path %></li>
+        <li><%= link_to 'Monthly Attendence', monthly_attendence_user_path(current_user) %></li>
       </ul>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-9">
       <%= yield %>
     </div>
 

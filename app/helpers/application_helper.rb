@@ -21,6 +21,16 @@ module ApplicationHelper
   end
 
   def sign_in_url(provider)
-    raw("<img src = '/assets/#{provider}.png' width = '300px' height ='40'")
+    raw("<span class='btn btn-block btn-social btn-#{provider}'>
+    <i class='fa fa-#{provider}'></i> Sign in with #{provider.titleize}
+    </span>")
+  end
+
+  def prev_link
+    raw("<i class='fa fa-backward'></i>")
+  end
+
+  def next_link
+    raw("<i class='fa fa-forward'></i>")
   end
 end

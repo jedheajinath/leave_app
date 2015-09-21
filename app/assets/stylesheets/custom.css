@@ -11,3 +11,16 @@ nav li a {color:white;}
 .present {color:blue; font-size: 12px; font-weight: bold}
 .absent {color:red;}
 .form-control{width:300px;}
+.links {margin-top: 8%;}
+a:hover {text-decoration: none}
+.user {padding: 5px;}
+.user h4{text-align: center}
+.admin{background: #9b0000;text-align: center; color: white;}
+.btn-facebook:hover, .btn-twitter:hover, .btn-google:hover{color:white;}
+.prev-month, .next-month{background: #E6E6E6}
+/*.current-month {background: #D8F6CE}*/
+.today {background: #F5F6CE}
+.future {background: white}
+.wday-6,.wday-0 {background: #F6CECE}
+#datepicker{float: left}
+.serch_attendence{float:left; position:absolute; margin-left: 10px;}

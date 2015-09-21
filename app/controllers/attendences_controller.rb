@@ -11,7 +11,8 @@ class AttendencesController < ApplicationController
   # end
 
   def show
-    @users = Attendence.get_daywise_attendence(params[:date])
+    @users = Attendence.get_daywise_attendence(params[:date]) if params[:date].present?
+  # else @users = Attendence.get_daywise_attendence(params[:date])
   end
 
   def present
