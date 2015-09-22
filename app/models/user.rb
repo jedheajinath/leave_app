@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-          :omniauthable, omniauth_providers: [:facebook, :twitter, :google]
+          :omniauthable, omniauth_providers: [:facebook, :twitter, :google_oauth2]
 
   has_many :leaves, dependent: :destroy, class_name: :Leave
   has_many :attendences, dependent: :destroy

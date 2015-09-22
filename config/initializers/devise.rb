@@ -263,7 +263,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, "1471774713045062", "15b22092a443c38482114a818b3569d5"
   config.omniauth :twitter, "CVVqOjwI4EzRiLgqe8jPncJXV", "TgDGKmlRxjdXir6wqnm3YcYrGsuLjl8HStTrA0shBSGJz2BjWR"
-  config.omniauth :google_oauth2, "973649451984-11pf12iq5ddacv1fbm88m6m6v9957e3r.apps.googleusercontent.com", "rMy8HrujGCCba_ajL9qq_joo"
+  config.omniauth :google_oauth2, "316673272975-g82ln2bit00nr9duk5505kb6vvet59dp.apps.googleusercontent.com", "Rc6eUCwZuRx7DB7NyQWNxwX6"
 
   config.secret_key = '31f93fdc7939a6e9a10bfc444fb5742682ed1a38e0e065f839e016913df375de4a591598a6778241676dc440185279e8a07b749c5d6283cc530a8172ec8f9c0e'
 end
