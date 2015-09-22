@@ -10,7 +10,7 @@ nav li a {color:white;}
 .day {padding:10px; font-size: 10px; height: 80px;}
 .present {color:blue; font-size: 12px; font-weight: bold}
 .absent {color:red;}
-.form-control{width:300px;}
+.form-control{width:80%;}
 .links {margin-top: 8%;}
 a:hover {text-decoration: none}
 .user {padding: 5px;}
