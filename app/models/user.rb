@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
           :omniauthable, omniauth_providers: [:facebook, :twitter, :google]
@@ -55,6 +54,4 @@ class User < ActiveRecord::Base
     Hash[self.attendences.where(attendence_date:
       date.beginning_of_month..date.end_of_month).pluck(:attendence_date, :attendence)]
   end
-
 end
-

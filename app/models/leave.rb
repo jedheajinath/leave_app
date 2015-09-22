@@ -45,6 +45,3 @@ class Leave < ActiveRecord::Base
       end
     end
 end
-
-
-

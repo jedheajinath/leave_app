@@ -6,10 +6,6 @@ class StatuesController < ApplicationController
     @leaves = Leave.all.order("created_at desc")
   end
 
-  # def notification
-  #   @leaves = Status.get_pending_leaves
-  # end
-
   def show
   end
 
@@ -54,10 +50,6 @@ class StatuesController < ApplicationController
   end
 
   private
-    # def set_status
-    #   @status = Status.find_by_id(params[:id])
-    # end
-
     def status_param
       params.require(:status).permit(:reason, :user_id)
     end

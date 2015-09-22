@@ -12,7 +12,4 @@ class SiteController < ApplicationController
   def home
     @leave = Leave.new
   end
-
-  def admin_home
-  end
 end

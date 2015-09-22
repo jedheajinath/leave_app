@@ -6,13 +6,8 @@ class AttendencesController < ApplicationController
     @users = User.where("role = 'Employee'")
   end
 
-  # def search_daywise_attendence
-  #   @users = Attendence.get_daywise_attendence(params[:date])
-  # end
-
   def show
     @users = Attendence.get_daywise_attendence(params[:date]) if params[:date].present?
-  # else @users = Attendence.get_daywise_attendence(params[:date])
   end
 
   def present
