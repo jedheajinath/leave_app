@@ -6,7 +6,6 @@ module Statusable
   end
 
   class_methods do
-
     def get_pending_leaves
       array = []
       pending_leaves.each do |status|
@@ -14,7 +13,5 @@ module Statusable
       end
       return array
     end
-
   end
-
 end

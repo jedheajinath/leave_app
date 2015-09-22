@@ -1,33 +1,33 @@
 <h4> Leave Details </h4>
 <table class="table table-bordered ">
-    <tr>
-      <th> Employee </th>
-      <td><%= @leave.user.name %></td>
-    </tr>
-    <tr>
-      <th> From Date</th>
-      <td> <%= @leave.from_date %> </td>
-    </tr>
-    <tr>
-     <th> To Date</th>
-     <td><%= @leave.to_date %> </td>
-    </tr>
-    <tr>
-      <th> Leave Reason </th>
-      <td><%= @leave.reason %> </td>
-    </tr>
-    <tr>
-      <th> No. of Days </th>
-      <td> <%= @leave.get_leaves_day %> Days</td>
-    </tr>
-    <tr>
-      <th> Status </th>
-      <td class="status<%=@leave.status.status%>"> <%= @leave.status.status %></td>
-    </tr>
-    <tr>
-      <th>Reason  </th>
-      <td> <%= @leave.status.reason %> </td>
-    </tr>
+  <tr>
+    <th> Employee </th>
+    <td><%= @leave.user.name %></td>
+  </tr>
+  <tr>
+    <th> From Date</th>
+    <td> <%= @leave.from_date %> </td>
+  </tr>
+  <tr>
+   <th> To Date</th>
+   <td><%= @leave.to_date %> </td>
+  </tr>
+  <tr>
+    <th> Leave Reason </th>
+    <td><%= @leave.reason %> </td>
+  </tr>
+  <tr>
+    <th> No. of Days </th>
+    <td> <%= @leave.get_leaves_day %> Days</td>
+  </tr>
+  <tr>
+    <th> Status </th>
+    <td class="status<%=@leave.status.status%>"> <%= @leave.status.status %></td>
+  </tr>
+  <tr>
+    <th>Reason  </th>
+    <td> <%= @leave.status.reason %> </td>
+  </tr>
 </table>
 
 <%= link_to "Back" , :back %>
