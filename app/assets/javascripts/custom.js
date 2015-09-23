@@ -32,6 +32,7 @@ $(document).ready(function(){
     $("#flash").remove();
   });
   $(".presents").parent().css( "background-color", "#D8F6CE" );
+  $(".absents").parent().css( "background-color", "#F6CECE" );
   $(".future .absents").html("");
   $(".prev-month .absents").html("")
 })

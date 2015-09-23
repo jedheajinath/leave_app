@@ -2,17 +2,23 @@
 <b> User Name :</b>   <%= @user.name.titleize %>
 <% attendence =  @user.get_monthly_attendence %>
 <%= month_calendar do |date| %>
-  <% if attendence.has_key?(date) && attendence[date] == true %>
+  <% if attendence.has_key?(date) %>
     <%= date %>
-    <div class= "presents">
-      <b> Present </b>
-    </div>
+    <% if attendence[date] == true %>
+      <div class= "presents">
+        <b> Present </b>
+      </div>
+    <% else %>
+      <div class = "absents">
+        <b> Absent </b>
+      </div>
+    <% end %>
   <% elsif date == date.end_of_week || date == date.beginning_of_week %>
      <%= date %>
   <% else %>
     <%= date %>
-    <div class = "absents">
-      <b> Absent </b>
+    <div class = "notavail">
+      <b> </b>
     </div>
   <% end %>
 <% end %>

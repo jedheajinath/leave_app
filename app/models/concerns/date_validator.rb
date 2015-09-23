@@ -1,4 +1,4 @@
-class Date_validator <  ActiveModel::Validator
+class DateValidator <  ActiveModel::Validator
 
   def validate(record)
     record.errors.clear
