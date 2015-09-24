@@ -18,7 +18,7 @@
         <td> <%= leave.from_date %> </td>
         <td><%= leave.to_date %> </td>
         <td> <%= leave.get_leaves_day %> </td>
-        <td class = "text-danger" >
+        <td class = "<%=leave.status.status%>" >
           <%= leave.status.status if leave.status.present? %>
         </td>
         <td><%= link_to 'View More', leafe_path(leave) %></td>

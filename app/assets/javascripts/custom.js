@@ -33,6 +33,7 @@ $(document).ready(function(){
   });
   $(".presents").parent().css( "background-color", "#D8F6CE" );
   $(".absents").parent().css( "background-color", "#F6CECE" );
+  $(".leave").parent().css("background-color", "#FFFFB2");
   $(".future .absents").html("");
   $(".prev-month .absents").html("")
 })

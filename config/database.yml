@@ -30,7 +30,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: leave_management_production
+  database: leave_management_development
   pool: 5
   username: root
   password: root

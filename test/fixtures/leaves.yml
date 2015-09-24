@@ -4,10 +4,14 @@ one:
   from_date: 2015-09-09
   to_date: 2015-09-09
   reason: MyText
-  user_id: 
+  user_id:
+  created_at: 2015-09-09
+  updated_at: 2015-09-09
 
 two:
   from_date: 2015-09-09
   to_date: 2015-09-09
   reason: MyText
-  user_id: 
+  user_id:
+  created_at: 2015-09-09
+  updated_at: 2015-09-09

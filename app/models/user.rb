@@ -10,6 +10,17 @@ class User < ActiveRecord::Base
     return self.attendences.where("attendence_date = ?", Date.today)
   end
 
+  def get_leaves_for_attendence
+    leave_days = []
+    self.leaves.each do |leave|
+    #get approved leave day
+      if leave.status.status == "Approved"
+        leave_days += (leave.from_date..leave.to_date).to_a
+      end
+    end
+    return leave_days
+  end
+
   def self.find_for_twitter_oauth(auth, signed_in_resource = nil)
     user = User.where(provider: auth.provider, uid: auth.uid).first
     if user

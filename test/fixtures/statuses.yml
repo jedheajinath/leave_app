@@ -2,10 +2,10 @@
 
 one:
   reason: MyText
-  user_id: 
-  leafe_id: 1
+  user_id:
+  leave_id:
 
 two:
   reason: MyText
-  user_id: 
-  leafe_id: 1
+  user_id:
+  leave_id:
