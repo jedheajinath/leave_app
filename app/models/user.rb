@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
   has_many :leaves, dependent: :destroy, class_name: :Leave
   has_many :attendences, dependent: :destroy
 
+
+
   def get_attendence
-    return self.attendences.where("attendence_date = ?", Date.today)
+    attendences.where("attendence_date = ?", Date.today)
   end
 
   def get_leaves_for_attendence
