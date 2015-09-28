@@ -1,13 +1,13 @@
 class LeavesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_leave, only: [:destroy]
+  before_action :set_leave, only: [:destroy, :show]
 
   def index
     @leaves = current_user.leaves.order("created_at desc")
   end
 
   def new
-    @leave = current_user.leaves.build
+    @leave = Leave.new
   end
 
   def create
@@ -24,7 +24,7 @@ class LeavesController < ApplicationController
   end
 
   def show
-    @leave = Leave.find(params[:id])
+    # @leave = Leave.find(params[:id])
   end
 
   def destroy
@@ -42,7 +42,6 @@ class LeavesController < ApplicationController
     end
 
     def leaves_params
-      params.require(:leave).permit(:from_date, :to_date, :reason, :user_id,
-       :status_attributes => [:status])
+      params.require(:leave).permit(:from_date, :to_date, :reason, :user_id)
     end
 end

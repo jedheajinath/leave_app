@@ -3,6 +3,10 @@ FactoryGirl.define do
     sequence(:email) { |n| "user#{n}@factory.com" }
     password "12345678"
 
+    factory :manager do
+      role "Manager"
+    end
+
     factory :user_with_leaves do
       after(:create) do |user|
         create(:leaves, user: user)
@@ -14,5 +18,6 @@ FactoryGirl.define do
         create(:attendence, user: user)
       end
     end
+
   end
 end

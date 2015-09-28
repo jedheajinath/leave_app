@@ -45,7 +45,7 @@ RSpec.describe Leave, type: :model do
 
   # leaves should belongs to user
   it "should belongs to user" do
-    expect(@leave.user).to be_valid
+    expect(@leave.user).to be_present
   end
 
   # ensure leave has status
